@@ -1,5 +1,17 @@
 - installation rest_framework [x]
 - configuration rest_framework [x]
 - creer un methode GET  pour test API [x]
+- relier la table employé avec la table user pour que les employé puisse avoir un compte [x]
+
+- creation API pour gérer les employés []
+  - Créer un EmployeeSerializers pour la conversion Python en JSON [x]
+  - GET | récupérer la liste des employés [x]
+  - POST | ajouter un nouvel employe []
+  - PUT | modifier un employe []
+  - DELETE | supprimer un employe []
+
+
+
+
 - creation API pour gérer les fiches paie []
 - création API pour gérer les utilisateurs []

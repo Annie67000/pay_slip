@@ -16,20 +16,27 @@ def test_fiche_paie(request):
     return Response(
         {'message': 'test fiche de paie'}
     ) 
-    
-    
-# Récupérer la liste des employés
-@api_view(['GET'])
+
+@api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
-def list_employees(request):
+def employe_list_create(request):
+    # --------------------------------------------------------------------
+    # GET | Récupérer la liste des employés
+    # --------------------------------------------------------------------
     if request.method == 'GET':
-        # Récupérer tous les employés (all)
         employees = Employe.objects.all()
-        
-        # Sérialiser les données des employés
         serializer = EmployeSerializer(employees, many=True)
-        
-        # Retourner la réponse avec les données sérialisées
         return Response(serializer.data)
+    
+    # --------------------------------------------------------------------
+    # POST | Ajouter un nouvel employé
+    # --------------------------------------------------------------------
+    elif request.method == 'POST':
+        # Pas besoin de vérifier 'if request.method == 'POST':' car on utilise 'elif'
+        serializer = EmployeSerializer(data=request.data)
         
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)  # 201 Created
+        return Response(serializer.errors, status=400)    # 400 Bad Request
         
