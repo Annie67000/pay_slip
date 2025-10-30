@@ -1,0 +1,7 @@
+pour créer un api avec django rest_framework/
+
+-creer un fonctionn dans 'views.py'
+- creer un fichier urls.py
+- ajouter les nouvelle urls dans le projet dans backend/urls.py
+- verifier si les nouvelles urls sont disponibles en tapant n'importe quoi dans le navigateur (pas recommandé mais il y a une meilleure façon à demander avec IA :) 
+- tester avec postman ou thunder client sur vscode 

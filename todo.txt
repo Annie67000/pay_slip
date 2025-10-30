@@ -1,3 +1,5 @@
-- installation rest_framework []
+- installation rest_framework [x]
+- configuration rest_framework [x]
+- creer un methode GET  pour test API [x]
 - creation API pour gérer les fiches paie []
 - création API pour gérer les utilisateurs []
