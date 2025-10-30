@@ -1,0 +1,3 @@
+- installation rest_framework []
+- creation API pour gérer les fiches paie []
+- création API pour gérer les utilisateurs []
