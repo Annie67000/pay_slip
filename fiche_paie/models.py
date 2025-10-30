@@ -1,8 +1,17 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class Employe(models.Model):
+    # Ceci crée la relation One-to-One vers le modèle User
+    # C'est ce qui relie les deux tables.
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+    )
+    
+    
     matricule = models.CharField(max_length=50, unique=True)
     nom = models.CharField(max_length=100)
     prenom = models.CharField(max_length=100)
